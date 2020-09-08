@@ -7,6 +7,10 @@ import (
 func TestArrary(t *testing.T) {
 
 	if true {
+		in := []int{1, 2}
+		t.Log(maxSubArray(in))
+	}
+	if false {
 		in := []int{1, 2, 3}
 		t.Log(countElements(in))
 	}

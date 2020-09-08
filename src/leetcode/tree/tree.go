@@ -99,3 +99,68 @@ func levelOrderBottom(root *TreeNode) [][]int {
 
 	return results
 }
+
+// 108. 将有序数组转换为二叉搜索树
+func sortedArrayToBST(nums []int) *TreeNode {
+	root := TreeNode{Val: 0, Left: nil, Right: nil}
+	if len(nums) == 0 {
+		return nil
+	}
+	// if len(nums)==1 {
+	// 	root.Val = nums[0]
+	// 	return &root
+
+	// }
+	root.Val = nums[len(nums)/2]
+	root.Left = sortedArrayToBST(nums[:len(nums)/2])
+	root.Right = sortedArrayToBST(nums[len(nums)/2+1:])
+	return &root
+}
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+//  538. 把二叉搜索树转换为累加树
+
+func convertBST(root *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	sum := 0
+	// if root.Right != nil {
+	convertBSTRecur(root, &sum)
+
+	return root
+}
+
+func convertBSTRecur(root *TreeNode, sum *int) int {
+	convertBSTRecur(root.Right, sum)
+	*sum += root.Val
+	root.Val += *sum
+	convertBSTRecur(root.Left, sum)
+	return root.Val
+}
+
+// 543. 二叉树的直径
+func diameterOfBinaryTree(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	// result := 0
+	leftLength := 0
+	rightLength := 0
+	if root.Left != nil {
+		leftLength = diameterOfBinaryTree(root.Left) + 1
+	}
+	if root.Right != nil {
+		rightLength = diameterOfBinaryTree(root.Right) + 1
+	}
+
+	return leftLength + rightLength
+
+}

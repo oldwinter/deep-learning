@@ -2,6 +2,7 @@ package everyday
 
 import (
 	. "leetcode/src/leetcode/tree"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -73,4 +74,23 @@ func invertTree(root *TreeNode) *TreeNode {
 	right := invertTree(root.Right)
 	root.Left, root.Right = right, left
 	return root
+}
+
+// 347. 前 K 个高频元素
+func topKFrequent(nums []int, k int) []int {
+	m := map[int]int{}
+	slice := []int{}
+	for _, num := range nums {
+		m[num]++
+		if m[num] == 1 {
+			slice = append(slice, num)
+		}
+
+	}
+	sort.Slice(slice, func(i, j int) bool {
+		return m[slice[i]] > m[slice[j]]
+	})
+
+	return slice[:k]
+
 }

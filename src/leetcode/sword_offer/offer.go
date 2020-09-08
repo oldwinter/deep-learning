@@ -1063,9 +1063,11 @@ func isStraight(nums []int) bool {
 // 剑指 Offer 62. 圆圈中最后剩下的数字
 // 关键点：画图试图举例推导出递归表达式
 func lastRemaining(n int, m int) int {
+	if n == 1 {
+		return 0
+	}
+	return (lastRemaining(n-1, m) + m) % n
 
-	lastRemaining(n-m, m)
-	return 1
 }
 
 // 剑指 Offer 65. 不用加减乘除做加法

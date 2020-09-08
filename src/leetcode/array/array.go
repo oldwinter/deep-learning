@@ -117,15 +117,59 @@ func countElements(arr []int) int {
 	}
 	for k := range m {
 		if m[k+1] > 0 {
-			min := 0
-			if m[k] > m[k+1] {
-				min = m[k+1]
-			} else {
-				min = m[k]
-			}
-			result += min
+			result += m[k]
 		}
 
 	}
 	return result
+}
+
+// 53. 最大子序和
+func maxSubArray(nums []int) int {
+	// result :=0
+	for i := 0; i < len(nums); i++ {
+		if i == 0 {
+			continue
+		}
+		if i > 0 && nums[i-1] > 0 {
+			nums[i] = nums[i-1] + nums[i]
+		} else {
+			continue
+		}
+	}
+	result := nums[0]
+	for _, num := range nums {
+		if num > result {
+			result = num
+		}
+	}
+	return result
+}
+
+// 69. x 的平方根
+func mySqrt(x int) int {
+	left := 0
+	right := x
+	for left < right {
+		mid := (left + right) / 2
+		if mid*mid > x {
+			right = mid - 1
+		} else if mid*mid < x {
+			left = mid + 1
+		} else {
+			return mid
+		}
+
+	}
+	if left*left > x {
+		return left - 1
+	} else {
+		return left
+	}
+
+}
+
+// 268. 缺失数字
+func missingNumber(nums []int) int {
+
 }

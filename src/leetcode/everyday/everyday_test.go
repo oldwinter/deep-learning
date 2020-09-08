@@ -6,7 +6,13 @@ import (
 )
 
 func TestEveryday(t *testing.T) {
+
 	if true {
+		in := []int{1, 1, 1, 2, 2, 3}
+		t.Log(topKFrequent(in, 2))
+
+	}
+	if false {
 		preorder := []int{3, 9, 20, 15, 7}
 		inorder := []int{9, 3, 15, 20, 7}
 		result := buildTree(preorder, inorder)
