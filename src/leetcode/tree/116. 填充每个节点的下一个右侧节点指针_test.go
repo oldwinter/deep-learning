@@ -35,7 +35,6 @@ package leetcode
 
 import (
 	"testing"
-	// . "github.com/oldwinter/deepLearning/src/leetcode/common"
 )
 
 func Test_connect(t *testing.T) {

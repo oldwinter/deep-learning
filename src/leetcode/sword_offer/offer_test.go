@@ -3,8 +3,8 @@ package sword_offer
 import (
 	"testing"
 
-	. "github.com/oldwinter/deepLearning/src/leetcode/linkedlist"
-	. "github.com/oldwinter/deepLearning/src/leetcode/tree"
+	// . "github.com/oldwinter/deepLearning/src/leetcode/linkedlist"
+	. "github.com/oldwinter/deepLearning/src/leetcode/common"
 )
 
 func TestOffer(t *testing.T) {
@@ -48,6 +48,7 @@ func TestOffer(t *testing.T) {
 
 		t.Log(copyRandomList(in))
 	}
+
 	if false {
 		preorder := []int{5, 4, 11, 7, 2, 8, 13, 3, 6, 1}
 		inorder := []int{7, 11, 2, 4, 5, 13, 8, 6, 3, 1}

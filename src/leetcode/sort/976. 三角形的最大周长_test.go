@@ -38,7 +38,6 @@ package leetcode
 import (
 	"sort"
 	"testing"
-	// . "github.com/oldwinter/deepLearning/src/leetcode/common"
 )
 
 func Test_largestPerimeter(t *testing.T) {

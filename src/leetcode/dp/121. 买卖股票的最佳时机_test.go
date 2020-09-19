@@ -27,7 +27,6 @@ package leetcode
 
 import (
 	"testing"
-	// . "github.com/oldwinter/deepLearning/src/leetcode/common"
 )
 
 func Test_maxProfit(t *testing.T) {

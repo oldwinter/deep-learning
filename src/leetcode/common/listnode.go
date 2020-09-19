@@ -6,7 +6,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// 用数组构造链表
+// MakeLinkedList 用数组构造链表
 func MakeLinkedList(sources []int) *ListNode {
 
 	var head *ListNode = &ListNode{}
@@ -20,7 +20,7 @@ func MakeLinkedList(sources []int) *ListNode {
 	return head.Next
 }
 
-// 按数组形式打印链表
+// PrintLinkedList 按数组形式打印链表
 func PrintLinkedList(head *ListNode) []int {
 	results := []int{}
 	for head != nil {

@@ -8,14 +8,13 @@ import (
 	"strings"
 	"unicode"
 
-	. "github.com/oldwinter/deepLearning/src/leetcode/linkedlist"
-	. "github.com/oldwinter/deepLearning/src/leetcode/tree"
+	// . "github.com/oldwinter/deepLearning/src/leetcode/linkedlist"
+	. "github.com/oldwinter/deepLearning/src/leetcode/common"
 )
 
 // 剑指 Offer 03. 数组中重复的数字
 func findRepeatNumber(nums []int) int {
 	m := map[int]int{}
-
 	for _, num := range nums {
 		if m[num] > 0 {
 			return num
@@ -83,7 +82,7 @@ func buildTree(preorder []int, inorder []int) *TreeNode {
 	if len(preorder) == 0 {
 		return nil
 	}
-	root := &TreeNode{preorder[0], nil, nil}
+	root := &TreeNode{Val: preorder[0], Left: nil, Right: nil}
 
 	if len(preorder) == 1 {
 		return root
@@ -404,9 +403,9 @@ func isSymmetric(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}
-	return digui(root.Left, root.Right)
+	return isSymmetricRecur(root.Left, root.Right)
 }
-func digui(left, right *TreeNode) bool {
+func isSymmetricRecur(left, right *TreeNode) bool {
 
 	if left == nil && right == nil {
 		return true
@@ -418,7 +417,7 @@ func digui(left, right *TreeNode) bool {
 		return false
 	}
 
-	return digui(left.Left, right.Right) && digui(left.Right, right.Left)
+	return isSymmetricRecur(left.Left, right.Right) && isSymmetricRecur(left.Right, right.Left)
 
 }
 
@@ -1073,7 +1072,7 @@ func lastRemaining(n int, m int) int {
 }
 
 // 剑指 Offer 65. 不用加减乘除做加法
-// 关键点： 不能直接加，只能递归复用temp和carry的方法，实现temp和caryy的相加，直到carry为0
+// 关键点： 不能直接加，只能递归复用temp和carry的方法，实现temp和carry的相加，直到carry为0
 func add(a int, b int) int {
 	// var x int = 0xFFFFFFFF
 	// carry := -1

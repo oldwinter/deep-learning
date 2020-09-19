@@ -18,7 +18,6 @@ package leetcode
 
 import (
 	"testing"
-	// . "github.com/oldwinter/deepLearning/src/leetcode/common"
 )
 
 func Test_maxSubArray(t *testing.T) {

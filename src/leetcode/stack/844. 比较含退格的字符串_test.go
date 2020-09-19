@@ -46,7 +46,6 @@ package leetcode
 
 import (
 	"testing"
-	// . "github.com/oldwinter/deepLearning/src/leetcode/common"
 )
 
 func Test_backspaceCompare(t *testing.T) {

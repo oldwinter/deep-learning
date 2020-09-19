@@ -47,7 +47,6 @@ import (
 	"fmt"
 	"strconv"
 	"testing"
-	// . "github.com/oldwinter/deepLearning/src/leetcode/common"
 )
 
 func Test_calPoints(t *testing.T) {

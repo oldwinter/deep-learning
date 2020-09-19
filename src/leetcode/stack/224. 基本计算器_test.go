@@ -30,7 +30,6 @@ package leetcode
 import (
 	"testing"
 	"unicode"
-	// . "github.com/oldwinter/deepLearning/src/leetcode/common"
 )
 
 func Test_calculate(t *testing.T) {

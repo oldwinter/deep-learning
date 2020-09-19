@@ -15,7 +15,6 @@ package leetcode
 
 import (
 	"testing"
-	// . "github.com/oldwinter/deepLearning/src/leetcode/common"
 )
 
 func Test_getKthMagicNumber(t *testing.T) {

@@ -32,16 +32,15 @@ package leetcode
 
 import (
 	"testing"
-	// . "github.com/oldwinter/deepLearning/src/leetcode/common"
 )
 
 func Test_ping(t *testing.T) {
 	obj := Constructor()
-	param_1 := obj.Ping(1)
-	param_2 := obj.Ping(100)
-	param_3 := obj.Ping(3001)
-	param_4 := obj.Ping(3002)
-	t.Log(param_1, param_2, param_3, param_4)
+	param1 := obj.Ping(1)
+	param2 := obj.Ping(100)
+	param3 := obj.Ping(3001)
+	param4 := obj.Ping(3002)
+	t.Log(param1, param2, param3, param4)
 }
 
 type RecentCounter struct {
@@ -51,10 +50,10 @@ type RecentCounter struct {
 func Constructor() RecentCounter {
 	return RecentCounter{}
 }
-func (this *RecentCounter) Ping(t int) int {
-	this.queue = append(this.queue, t)
-	for this.queue[0] < t-3000 {
-		this.queue = this.queue[1:]
+func (r *RecentCounter) Ping(t int) int {
+	r.queue = append(r.queue, t)
+	for r.queue[0] < t-3000 {
+		r.queue = r.queue[1:]
 	}
-	return len(this.queue)
+	return len(r.queue)
 }
