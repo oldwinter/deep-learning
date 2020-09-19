@@ -2,8 +2,32 @@ package common
 
 // ListNode represents a node in a linked list.
 type ListNode struct {
-	Value int
-	Next  *ListNode
+	Val  int
+	Next *ListNode
+}
+
+// 用数组构造链表
+func MakeLinkedList(sources []int) *ListNode {
+
+	var head *ListNode = &ListNode{}
+	temp := head
+	for _, source := range sources {
+		t := &ListNode{source, nil}
+		temp.Next = t
+		temp = temp.Next
+	}
+
+	return head.Next
+}
+
+// 按数组形式打印链表
+func PrintLinkedList(head *ListNode) []int {
+	results := []int{}
+	for head != nil {
+		results = append(results, head.Val)
+		head = head.Next
+	}
+	return results
 }
 
 // NewListNode returns a new list node.
@@ -27,7 +51,7 @@ func LinkedListToSlice(node *ListNode) []int {
 	out := []int{}
 
 	for n := node; n != nil; n = n.Next {
-		out = append(out, n.Value)
+		out = append(out, n.Val)
 	}
 
 	return out
