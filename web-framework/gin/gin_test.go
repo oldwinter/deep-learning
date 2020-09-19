@@ -7,11 +7,11 @@ func Test_main(t *testing.T) {
 		name string
 	}{
 		// TODO: Add test cases.
-		// TODO：aa
-		// FIXME：AAAI
+		// FIXME：AAA
 		// BUG:
 
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			main()
