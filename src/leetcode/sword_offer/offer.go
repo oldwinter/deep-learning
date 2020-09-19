@@ -2,13 +2,14 @@ package sword_offer
 
 import (
 	"container/heap"
-	. "leetcode/src/leetcode/linkedlist"
-	. "leetcode/src/leetcode/tree"
 	"math"
 	"regexp"
 	"sort"
 	"strings"
 	"unicode"
+
+	. "github.com/oldwinter/deepLearning/src/leetcode/linkedlist"
+	. "github.com/oldwinter/deepLearning/src/leetcode/tree"
 )
 
 // 剑指 Offer 03. 数组中重复的数字
@@ -75,6 +76,7 @@ func reversePrint(head *ListNode) []int {
 }
 
 // 剑指 Offer 07. 重建二叉树 假设不含重复数字
+// 105. 从前序与中序遍历序列构造二叉树
 func buildTree(preorder []int, inorder []int) *TreeNode {
 	// result := TreeNode{}
 	// for  {

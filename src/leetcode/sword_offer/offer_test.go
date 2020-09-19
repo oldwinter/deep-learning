@@ -1,9 +1,10 @@
 package sword_offer
 
 import (
-	. "leetcode/src/leetcode/linkedlist"
-	. "leetcode/src/leetcode/tree"
 	"testing"
+
+	. "github.com/oldwinter/deepLearning/src/leetcode/linkedlist"
+	. "github.com/oldwinter/deepLearning/src/leetcode/tree"
 )
 
 func TestOffer(t *testing.T) {
