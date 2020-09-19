@@ -47,6 +47,7 @@ import (
 func Test_maxSlidingWindow(t *testing.T) {
 	nums := []int{1, -1}
 	t.Log(maxSlidingWindow(nums, 1))
+
 }
 func maxSlidingWindow(nums []int, k int) []int {
 	if len(nums) == 0 {
