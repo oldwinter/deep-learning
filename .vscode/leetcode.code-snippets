@@ -1,0 +1,21 @@
+{
+	"LeetCode": {
+		"scope": "go",
+		"prefix": "lc",
+		"body": [
+			"/*", 
+			"$1",
+			"*/",
+			"package leetcode",
+			"import (",
+			"    \"testing\"",
+			"    . \"github.com/oldwinter/deepLearning/src/leetcode/common\"",
+			")",
+			"func Test_$2(t *testing.T) {",
+			" ",	
+			"}"
+			
+		],
+		"description": "leetcode模板"
+	}
+}
