@@ -1,0 +1,28 @@
+apiVersion: config.istio.io/v1alpha2
+kind: handler
+metadata:
+  name: advertisementwhitelist
+  namespace: istio-system
+spec:
+  compiledAdapter: listchecker
+  params:
+    overrides: ["frontend"] 
+    blacklist: false
+---
+apiVersion: config.istio.io/v1alpha2
+kind: instance
+metadata:
+  name: advertisementsource
+  namespace: istio-system
+spec:
+  value: source.labels["app"]
+---
+apiVersion: config.istio.io/v1alpha2
+kind: rule
+metadata:
+  name: check
+spec:
+  match: destination.labels["app"] == "advertisement"
+  actions:
+  - handler: advertisementwhitelist
+    instances: [ advertisementsource ]
