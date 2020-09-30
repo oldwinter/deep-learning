@@ -3,8 +3,8 @@ package sword_offer
 import (
 	"testing"
 
-	// . "github.com/oldwinter/deepLearning/src/leetcode/linkedlist"
-	. "github.com/oldwinter/deepLearning/src/leetcode/common"
+	// . "github.com/oldwinter/deep-learning/leetcode/linkedlist"
+	. "github.com/oldwinter/deep-learning/leetcode/common"
 )
 
 func TestOffer(t *testing.T) {

@@ -51,7 +51,7 @@ package leetcode
 import (
 	"testing"
 
-	. "github.com/oldwinter/deepLearning/src/leetcode/common"
+	. "github.com/oldwinter/deep-learning/leetcode/common"
 )
 
 func Test_hasCycle(t *testing.T) {

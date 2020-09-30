@@ -8,8 +8,8 @@ import (
 	"strings"
 	"unicode"
 
-	// . "github.com/oldwinter/deepLearning/src/leetcode/linkedlist"
-	. "github.com/oldwinter/deepLearning/src/leetcode/common"
+	// . "github.com/oldwinter/deep-learning/leetcode/linkedlist"
+	. "github.com/oldwinter/deep-learning/leetcode/common"
 )
 
 // 剑指 Offer 03. 数组中重复的数字

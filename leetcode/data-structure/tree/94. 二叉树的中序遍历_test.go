@@ -22,7 +22,7 @@ package leetcode
 import (
 	"testing"
 
-	. "github.com/oldwinter/deepLearning/src/leetcode/common"
+	. "github.com/oldwinter/deep-learning/leetcode/common"
 )
 
 func Test_inorderTraversal(t *testing.T) {
