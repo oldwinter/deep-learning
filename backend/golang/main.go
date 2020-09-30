@@ -11,7 +11,7 @@ const (
 	Wednesday
 )
 
-func main1() {
+func main() {
 	fmt.Println(os.Args)
 	a, b := "a", "c"
 	a, b = b, a
