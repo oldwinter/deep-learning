@@ -1,0 +1,47 @@
+##################################################################################################
+# Advertisement service
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: advertisement
+  annotations:
+    networking.istio.io/exportTo: "."
+  labels:
+    app: advertisement
+    service: advertisement
+spec:
+  ports:
+  - port: 3003
+    name: http
+  selector:
+    app: advertisement
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: advertisement-dr 
+spec:
+  host: advertisement
+  exportTo:
+  - "."
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: advertisement-route
+spec:
+  hosts:
+  - advertisement
+  exportTo:
+  - "."
+  http:
+  - route:
+    - destination:
+        host: advertisement
+        subset: v1
+---

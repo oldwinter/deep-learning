@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: service-node-v2
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: service-node
+        version: v2
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: service-node
+        image: registry.cn-shanghai.aliyuncs.com/istio-test/service-node:v2
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /status
+            port: 80
+          initialDelaySeconds: 2
+          timeoutSeconds: 10
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /status
+            port: 80
+          initialDelaySeconds: 2
+          timeoutSeconds: 5
+          periodSeconds: 3
